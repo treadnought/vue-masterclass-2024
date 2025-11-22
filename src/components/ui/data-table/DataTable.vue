@@ -67,3 +67,15 @@ const table = useVueTable({
         </Table>
     </div>
 </template>
+
+<style scoped>
+@reference "../../../assets/index.css";
+
+td {
+    @apply p-0;
+}
+
+td > * {
+    @apply p-2;
+}
+</style>

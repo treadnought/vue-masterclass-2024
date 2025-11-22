@@ -20,7 +20,14 @@ const columns: ColumnDef<Tables<'tasks'>>[] = [
         accessorKey: 'name',
         header: () => h('div', { class: 'text-left' }, 'Name'),
         cell: ({ row }) => {
-            return h('div', { class: 'text-left font-medium' }, row.getValue('name'))
+            return h(
+                RouterLink,
+                {
+                    to: `/tasks/${row.original.id}`,
+                    class: 'text-left font-medium hover:text-blue-700 block w-full',
+                },
+                () => row.getValue('name'),
+            )
         },
     },
     {

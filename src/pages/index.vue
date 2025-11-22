@@ -5,11 +5,7 @@ import { Button } from '@/components/ui/button'
 
 <template>
     <div>
-        <Button class="bg-red-600">Damn You</Button>
-    </div>
-    <div>
         <h1>Home Page</h1>
-        <RouterLink :to="{ name: '/projects/[id]', params: { id: 1 } }">Project 1</RouterLink>
     </div>
 </template>
 
