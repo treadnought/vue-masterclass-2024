@@ -28,15 +28,15 @@ await getProjects()
     <Table>
         <TableRow>
             <TableHead> Name </TableHead>
-            <TableCell> Lorem ipsum dolor sit amet. </TableCell>
+            <TableCell> {{ project?.name }} </TableCell>
         </TableRow>
         <TableRow>
             <TableHead> Description </TableHead>
-            <TableCell> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </TableCell>
+            <TableCell> {{ project?.description }} </TableCell>
         </TableRow>
         <TableRow>
             <TableHead> Status </TableHead>
-            <TableCell>In progress</TableCell>
+            <TableCell>{{ project?.status }}</TableCell>
         </TableRow>
         <TableRow>
             <TableHead> Collaborators </TableHead>
@@ -44,8 +44,8 @@ await getProjects()
                 <div class="flex">
                     <Avatar
                         class="-mr-4 border border-primary hover:scale-110 transition-transform"
-                        v-for="n in 5"
-                        :key="n"
+                        v-for="colleague in project?.collaborators"
+                        :key="colleague"
                     >
                         <RouterLink class="w-full h-full flex items-center justify-center" to="">
                             <AvatarImage src="" alt="" />
@@ -70,7 +70,7 @@ await getProjects()
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        <TableRow v-for="n in 5" :key="n">
+                        <TableRow v-for="task in project?.tasks" :key="task.id">
                             <TableCell> Lorem ipsum dolor sit amet. </TableCell>
                             <TableCell> In progress </TableCell>
                             <TableCell> 22/08/2024 </TableCell>
