@@ -105,7 +105,7 @@ await getProjects()
 </template>
 
 <style>
-@reference "../../assets/index.css";
+@reference ".@/assets/index.css";
 
 th {
     @apply w-[100px];
