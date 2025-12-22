@@ -15,6 +15,8 @@ const getTasks = async () => {
 }
 
 await getTasks()
+
+useErrorStore().setError({ error: Error('Unidentified error') })
 </script>
 
 <template>
